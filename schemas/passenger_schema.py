@@ -72,7 +72,7 @@ class PassengerSchema(Schema):
                          ['male', 'female'],
                          error="Sex must be either male or female.")
                      )
-    age = fields.Float(required=True, metadata=AGE_METADATA,
+    age = fields.Float(required=False, allow_none=True, metadata=AGE_METADATA,
                        description=AGE_DESCRIPTION, validate=validate.Range(
                            min=0, max=100),
                        error="Age must be between 0 and 100 years.")
@@ -91,16 +91,17 @@ class PassengerSchema(Schema):
     ticket = fields.Str(
         required=True, metadata=TICKET_METADATA, description=TICKET_DESCRIPTION)
     fare = fields.Float(
-        required=True, metadata=FARE_METADATA, description=FARE_DESCRIPTION,
+        required=False, allow_none=True, metadata=FARE_METADATA, description=FARE_DESCRIPTION,
         validate=validate.Range(min=0),
         error="The fare value must be at least 0.")
     cabin = fields.Str(
-        required=True, metadata=CABIN_METADATA, description=CABIN_DESCRIPTION,
+        required=False, allow_none=True, metadata=CABIN_METADATA, description=CABIN_DESCRIPTION,
         validate=validate.Regexp(r"^[A-Z][\w\s]*$",
                                  error="Cabin format is invalid.")
     )
     embarked = fields.Str(
-        required=True, metadata=EMBARKED_METADATA, description=EMBARKED_DESCRIPTION,
+        required=False, allow_none=True, metadata=EMBARKED_METADATA,
+        description=EMBARKED_DESCRIPTION,
         validate=validate.OneOf(['Cherbourg', 'Queenstown', 'Southampton']))
 
 
