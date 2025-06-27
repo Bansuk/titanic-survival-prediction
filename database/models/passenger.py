@@ -18,11 +18,11 @@ class Passenger(db.Model):
         age (float): Age of the passenger.
         number_siblings_spouses (int): Number of siblings and/or spouses aboard.
         number_parents_children (int): Number of parents and/or children aboard.
-        ticket (int): Number of the ticket.
+        ticket (str): Number of the ticket.
         fare (float): Price of the ticket.
         cabin (str): Number of the cabin.
         embarked (str): Passenger's boarding port.
-        survived (int): The fate of the passenger after the collision.
+        survived (bool): The fate of the passenger after the collision.
         created_at (datetime): Timestamp when the record was created.
         updated_at (datetime): Timestamp when the record was last updated.
     """
@@ -36,11 +36,11 @@ class Passenger(db.Model):
     age = db.Column(db.Float, nullable=False)
     number_siblings_spouses = db.Column(db.Integer, nullable=False)
     number_parents_children = db.Column(db.Integer, nullable=False)
-    ticket = db.Column(db.Integer, nullable=False)
+    ticket = db.Column(db.String, nullable=False)
     fare = db.Column(db.Float, nullable=False)
     cabin = db.Column(db.String(3), nullable=False)
     embarked = db.Column(db.String(11), nullable=False)
-    survived = db.Column(db.Integer, nullable=False)
+    survived = db.Column(db.Boolean, nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.now(timezone.utc))
     updated_at = db.Column(
         db.DateTime, default=datetime.now(timezone.utc), onupdate=datetime.now(timezone.utc))
@@ -54,11 +54,11 @@ def __init__(
     age: float,
     number_siblings_spouses: int,
     number_parents_children: int,
-    ticket: int,
+    ticket: str,
     fare: float,
     cabin: str,
     embarked: str,
-    survived: int
+    survived: bool
 ) -> None:
     self.name = name
     self.ticket_class = ticket_class
