@@ -145,7 +145,7 @@ class PassengerViewSchema(Schema):
     ticket = fields.Str(
         required=True, metadata=TICKET_METADATA, description=TICKET_DESCRIPTION)
     fare = fields.Float(
-        required=False, allow_none=True, metadata=FARE_METADATA, description=FARE_DESCRIPTION)
+        required=True, metadata=FARE_METADATA, description=FARE_DESCRIPTION)
     cabin = fields.Str(
         required=False, allow_none=True, metadata=CABIN_METADATA, description=CABIN_DESCRIPTION)
     embarked = fields.Str(

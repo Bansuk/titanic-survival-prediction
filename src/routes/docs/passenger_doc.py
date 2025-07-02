@@ -45,6 +45,7 @@ passenger_responses = {
         '- `number_parents_children` é obrigatório, mas não foi fornecido.\n'
         '- `number_parents_children` o valor deve ser maior ou igual a 0.\n'
         '- `ticket` é obrigatório, mas não foi fornecido.\n'
+        '- `fare` é obrigatório, mas não foi fornecido.\n'
         '- `fare` o valor deve ser maior ou igual a 0.\n'
         '- `cabin` formato inválido.\n'
         '- `embarked` valor deve ser Cherbourg, Queenstown ou Southampton.\n\n',
@@ -69,7 +70,7 @@ passenger_responses = {
                                                         '"The number of parents and/or children related to the passenger '
                                                         'aboard of the Titanic must be equal to or larger than 0.'],
                             'ticket': ['Missing data for required field.'],
-                            'fare': ['The fare value must be at least 0.'],
+                            'fare': ['Missing data for required field.', 'The fare value must be at least 0.'],
                             'cabin': ['Cabin format is invalid.'],
                             'embarked': ['Embkarked value must be one either Cherbourg, Queenstown or Southampton.'],
                         }

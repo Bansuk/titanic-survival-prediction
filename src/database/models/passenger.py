@@ -37,7 +37,7 @@ class Passenger(db.Model):
     number_siblings_spouses = db.Column(db.Integer, nullable=False)
     number_parents_children = db.Column(db.Integer, nullable=False)
     ticket = db.Column(db.String, nullable=False)
-    fare = db.Column(db.Float, nullable=True)
+    fare = db.Column(db.Float, nullable=False)
     cabin = db.Column(db.String(3), nullable=True)
     embarked = db.Column(db.String(11), nullable=True)
     survived = db.Column(db.Boolean, nullable=False)

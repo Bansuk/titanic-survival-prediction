@@ -3,6 +3,7 @@ Dataclass module for the Passenger.
 """
 
 from dataclasses import dataclass
+from typing import Optional
 
 
 @dataclass
@@ -28,10 +29,10 @@ class PassengerData:
     name: str
     ticket_class: int
     sex: str
-    age: float
     number_siblings_spouses: int
     number_parents_children: int
     ticket: str
     fare: float
-    cabin: str
-    embarked: str
+    age: Optional[float] = None
+    cabin: Optional[str] = None
+    embarked: Optional[str] = None
