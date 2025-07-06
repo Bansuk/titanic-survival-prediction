@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 ### Rodando o Projeto
 ```bash
-python3 app.py
+python3 src/app.py
 ```
 
 ### Rodando testes (com venv ativo)
