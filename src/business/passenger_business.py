@@ -58,7 +58,7 @@ def get_passenger_survival_prediction(data: PassengerData) -> bool:
     pipeline = Pipeline()
     preprocessor = PreProcessor()
 
-    bundle = pipeline.load_pipeline("./ml/titanic_model_bundle.pkl")
+    bundle = pipeline.load_pipeline("src/ml/titanic_model_bundle.pkl")
 
     model = bundle['model']
     pp = bundle['preprocessor']
